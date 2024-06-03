@@ -1,63 +1,76 @@
-/*
-Function that creates a random float 
-number between 0,1,2 and rounds it to 
-nearest integer
-*/
-function getComputerChoice() {
-    return Math.round(Math.random()*2);
+let computerScore = 0;
+
+let userScore = 0;
+
+function playGame() {
+    let a = getHumanChoice();
+    const humanChoice = a.toLowerCase();
+
+    let i = getComputerChoice();
+    const computerChoice = i;
+
+
+    function getHumanChoice() {
+        return prompt("Enter your form of attack: Rock, Paper, or Scissor: ")
+    }
+
+    function getComputerChoice() {
+        return Math.round(Math.random()*2);
+    }
+
+    function playRound(humanChoice, computerChoice) {
+        if (computerChoice === 0 && humanChoice === "rock") {
+            console.log("Nobody wins, you both chose Rock!");
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 0 && humanChoice === "paper") {
+            console.log("You win! Paper beats Rock!");
+            userScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 0 && humanChoice === "scissor") {
+            console.log("You lose :( Rock beats Scissor...");
+            computerScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 1 && humanChoice === "rock") {
+            console.log("You lose :( Paper beats Rock...")
+            computerScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 1 && humanChoice === "paper") {
+            console.log("Nobody wins, you both chose Paper!")
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 1 && humanChoice === "scissor") {
+            console.log("You win! Scissor beats Paper!")
+            userScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 2 && humanChoice === "rock") {
+            console.log("You win! Rock beats Scissor!")
+            userScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 2 && humanChoice === "paper") {
+            console.log("You lose :( Scissor beats Paper...")
+            computerScore++;
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else if (computerChoice === 2 && humanChoice ==="scissor") {
+            console.log("Nobody wins, you both chose Scissor!")
+            console.log("The computer's score is ", computerScore, "and your score is ", userScore);
+        } else {
+            console.log("Please use one of the three choices provided...")
+        }
+    }
+
+    playRound(humanChoice, computerChoice)
+
 }
 
-
-/*
-Function prompts user to choose rock, paper, or scissors
-*/
-function getHumanChoice() {
-    return prompt("Enter your form of attack: Rock, Paper, or Scissor: ")
-}
-
-
-/*
-Variable that stores the input from the user
-*/
-let a = getHumanChoice();
-
-
-/*Created a variable to store the random
-integer in
-*/
-let i = getComputerChoice();
-
-/*
-Variable to increment +1 each time computer wins
-*/
-let computerScore = 0
-
-/*
-Variable to increment +1 each time user wins
-*/
-let userScore = 0
-
-/*Conditional statement that assumes 0 = Rock, 1 = Paper,
-and 2 = Scissor. It then compares i to a to see which input
-wins based on the rule of rock, paper, scissor, shoot.
-*/
-if (i === 0 && a === "Rock") {
-    console.log("Nobody wins, you both chose Rock!");
-} else if (i === 0 && a === "Paper") {
-    console.log("You win! Paper beats Rock!");
-} else if (i === 0 && a === "Scissor") {
-    console.log("You lose :( Rock beats Scissor...");
-} else if (i === 1 && a === "Rock") {
-    console.log("You lose :( Paper beats Rock...")
-} else if (i === 1 && a === "Paper") {
-    console.log("Nobody wins, you both chose Paper!")
-} else if (i === 1 && a === "Scissor") {
-    console.log("You win! Scissor beats Paper!")
-} else if (i === 2 && a === "Rock") {
-    console.log("You win! Rock beats Scissor!")
-} else if (i === 2 && a === "Paper") {
-    console.log("You lose :( Scissor beats Paper...")
-} else if (i === 2 && a ==="Scissor") {
-    console.log("Nobody wins, you both chose Scissor!")
-}
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
 
